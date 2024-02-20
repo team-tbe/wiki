@@ -36,7 +36,7 @@ function generateWiki(directory, level) {
 
     for (const file of files) {
         const filePath = path.join(directory, file);
-        
+
         if (isMarkdownFile(file)) {
             wikiContent += `- [${file}](${sanitizeFileName(filePath)})\n`;
         } else if (fs.statSync(filePath).isDirectory() && hasMarkdownFiles(filePath)) {
@@ -57,13 +57,18 @@ function generateWiki(directory, level) {
 
 function generateReadme(directory) {
     let readmeContent = '# 프로젝트 위키\n\n' +
+        '\n---\n' +
         '## 프로젝트명\n\n' +
+        '\n---\n' +
         '프로젝트명 (프로젝트에 대한 간략한 설명)\n\n' +
         '## 소개\n\n' +
+        '\n---\n' +
         '프로젝트의 목적과 주요 기능에 대한 간략한 소개를 제공합니다.\n\n' +
         '## 시작하기\n\n' +
+        '\n---\n' +
         '프로젝트를 실행하고 개발에 참여하기 위한 기본 단계를 안내합니다.\n\n' +
         '## 사용법\n\n' +
+        '\n---\n' +
         '프로젝트의 기능과 사용법에 대한 자세한 설명을 제공합니다.\n';
 
     readmeContent += generateWiki(directory, 1);

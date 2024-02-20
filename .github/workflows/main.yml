@@ -9,7 +9,7 @@ on:
     branches:
       - main
     paths:
-      - '.github/workflows/main-action.yaml'
+      - '.github/workflows/main.yaml'
 
 jobs:
   build:

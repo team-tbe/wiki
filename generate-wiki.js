@@ -42,12 +42,7 @@ function generateWiki(directory, level) {
         } else if (fs.statSync(filePath).isDirectory() && hasMarkdownFiles(filePath)) {
             const heading = '#'.repeat(level + 1);
             wikiContent += `\n${heading} [${sanitizeFileName(file)}](${filePath}/README.md)\n`;
-
-            // level이 1일 때만 경계선 추가
-            if (level === 1) {
-                wikiContent += '\n---\n';
-            }
-
+            
             wikiContent += generateWiki(filePath, level + 1);
         }
     }
@@ -57,18 +52,13 @@ function generateWiki(directory, level) {
 
 function generateReadme(directory) {
     let readmeContent = '# 프로젝트 위키\n\n' +
-        '\n---\n' +
         '## 프로젝트명\n\n' +
-        '\n---\n' +
         '프로젝트명 (프로젝트에 대한 간략한 설명)\n\n' +
         '## 소개\n\n' +
-        '\n---\n' +
         '프로젝트의 목적과 주요 기능에 대한 간략한 소개를 제공합니다.\n\n' +
         '## 시작하기\n\n' +
-        '\n---\n' +
         '프로젝트를 실행하고 개발에 참여하기 위한 기본 단계를 안내합니다.\n\n' +
         '## 사용법\n\n' +
-        '\n---\n' +
         '프로젝트의 기능과 사용법에 대한 자세한 설명을 제공합니다.\n';
 
     readmeContent += generateWiki(directory, 1);

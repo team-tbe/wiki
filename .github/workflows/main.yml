@@ -1,0 +1,30 @@
+name: Auto-generate README.md
+
+on:
+  push:
+    branches:
+      - main
+      
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Set up Node.js
+      uses: actions/setup-node@v4  # setup-node 액션의 버전을 설정하여 LTS를 사용합니다
+      with:
+        node-version: 'lts/*'  # 미리 정의된 최신 LTS 버전을 사용합니다
+
+    - name: Generate README.md
+      run: node ./generate-wiki.js
+      
+    - name: Commit and push changes
+      run: |
+        git config user.name "GitHub Actions"
+        git config user.email "actions@github.com"
+        git add README.md
+        git commit -m "Update README.md"
+        git push

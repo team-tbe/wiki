@@ -1,7 +1,7 @@
 name: Auto-generate README.md
 
 on:
-  push:
+  pull_request:
     branches:
       - main
       
@@ -26,5 +26,10 @@ jobs:
         git config user.name "GitHub Actions"
         git config user.email "actions@github.com"
         git add README.md
-        git commit -m "Update README.md"
-        git push
+        # 변경 사항이 있는지 확인합니다.
+        if git diff --staged --quiet; then
+          echo "No changes to commit."
+        else
+          git commit -m "Update README.md"
+          git push
+        fi

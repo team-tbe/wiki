@@ -1,35 +1,35 @@
 name: Auto-generate README.md
 
 on:
-  pull_request:
+  push:
     branches:
-      - main
-      
+      - main                        # main 브랜치에 푸시될 때만 작동
+
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-latest          # ubuntu 환경 세팅
 
     steps:
-    - name: Checkout repository
-      uses: actions/checkout@v2
+      - name: Checkout repository     # 레파지토리 체크아웃
+        uses: actions/checkout@v2
 
-    - name: Set up Node.js
-      uses: actions/setup-node@v4  # setup-node 액션의 버전을 설정하여 LTS를 사용합니다
-      with:
-        node-version: 'lts/*'  # 미리 정의된 최신 LTS 버전을 사용합니다
+      - name: Set up Node.js          # Node 환경 세팅
+        uses: actions/setup-node@v4
+        with:
+          node-version: 'lts/*'
 
-    - name: Generate README.md
-      run: node ./generate-wiki.js
-      
-    - name: Commit and push changes
-      run: |
-        git config user.name "GitHub Actions"
-        git config user.email "actions@github.com"
-        git add README.md
-        # 변경 사항이 있는지 확인합니다.
-        if git diff --staged --quiet; then
-          echo "No changes to commit."
-        else
-          git commit -m "Update README.md"
-          git push
-        fi
+      - name: Generate README.md      # 리드미 작성
+        run: node ./generate-wiki.js
+
+      - name: Commit and push changes # 변경사항 적용
+        run: |
+          git config user.name "GitHub Actions"
+          git config user.email "actions@github.com"
+          git add README.md
+          # 변경 사항이 있는지 확인합니다.
+          if git diff --staged --quiet; then
+            echo "No changes to commit."
+          else
+            git commit -m "Update README.md"
+            git push
+          fi

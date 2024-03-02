@@ -27,6 +27,7 @@
 - [3.md](CS/3.md)
 
 ### [Web](CS/Web/README.md)
+- [Nginx.md](CS/Web/Nginx.md)
 - [REST.md](CS/Web/REST.md)
 
 ## [Interview](Interview/README.md)

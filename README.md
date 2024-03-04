@@ -17,9 +17,7 @@
 프로젝트의 기능과 사용법에 대한 자세한 설명을 제공합니다.
 
 ## [Algorithm](Algorithm/README.md)
-- [1.md](Algorithm/1.md)
-- [2.md](Algorithm/2.md)
-- [3.md](Algorithm/3.md)
+- [CountingSort.md](Algorithm/CountingSort.md)
 
 ## [CS](CS/README.md)
 - [1.md](CS/1.md)

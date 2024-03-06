@@ -24,6 +24,10 @@
 - [2.md](CS/2.md)
 - [3.md](CS/3.md)
 
+### [DataStructure](CS/DataStructure/README.md)
+- [Array.md](CS/DataStructure/Array.md)
+- [LinkedList.md](CS/DataStructure/LinkedList.md)
+
 ### [Web](CS/Web/README.md)
 - [Nginx.md](CS/Web/Nginx.md)
 - [REST.md](CS/Web/REST.md)

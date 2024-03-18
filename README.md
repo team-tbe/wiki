@@ -55,6 +55,9 @@
 - [2.md](Javascript/Node.js/2.md)
 - [3.md](Javascript/Node.js/3.md)
 
+### [TypeORM](Javascript/TypeORM/README.md)
+- [fetchType.md](Javascript/TypeORM/fetchType.md)
+
 ### 예시
 
 프로젝트의 사용 예시 코드나 명령어를 제공합니다.

@@ -46,6 +46,7 @@
 - [2.md](Javascript/2.md)
 - [20240213[M].md](Javascript/20240213[M].md)
 - [3.md](Javascript/3.md)
+- [Class-Object.md](Javascript/Class-Object.md)
 
 ### [Nest.js](Javascript/Nest.js/README.md)
 - [intercepeter.md](Javascript/Nest.js/intercepeter.md)
@@ -57,6 +58,7 @@
 
 ### [TypeORM](Javascript/TypeORM/README.md)
 - [fetchType.md](Javascript/TypeORM/fetchType.md)
+- [prototype.md](Javascript/prototype.md)
 
 ### 예시
 

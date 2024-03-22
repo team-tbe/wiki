@@ -27,6 +27,8 @@
 ### [DataStructure](CS/DataStructure/README.md)
 - [Array.md](CS/DataStructure/Array.md)
 - [LinkedList.md](CS/DataStructure/LinkedList.md)
+- [Queue.md](CS/DataStructure/Queue.md)
+- [Stack.md](CS/DataStructure/Stack.md)
 
 ### [Web](CS/Web/README.md)
 - [Nginx.md](CS/Web/Nginx.md)
